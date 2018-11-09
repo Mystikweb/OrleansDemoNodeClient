@@ -1,0 +1,19 @@
+{
+  "name": "orleansdemonodeclient",
+  "version": "1.0.0",
+  "description": "Orleans demo client for NodeJS",
+  "main": "client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mystikweb/OrleansDemoNodeClient.git"
+  },
+  "author": "Christopher Hair",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mystikweb/OrleansDemoNodeClient/issues"
+  },
+  "homepage": "https://github.com/Mystikweb/OrleansDemoNodeClient#readme"
+}
