@@ -13,6 +13,7 @@ export class Dht11Reader {
 
     readValue(): SensorResult {
         const sensorReadValue = this.sensor.read();
+        console.log(sensorReadValue);
 
         return new SensorResult(sensorReadValue.temperature,
             sensorReadValue.humidity,

@@ -18,33 +18,53 @@ export class RGBLight {
         this.bluePin = new Gpio(bluePinNumber, { mode: Gpio.OUTPUT });
     }
 
-    off() {
-        this.redPin.digitalWrite(PinState.OFF);
-        this.greenPin.digitalWrite(PinState.OFF);
-        this.bluePin.digitalWrite(PinState.OFF);
+    off(waitTime: number | null | undefined) {
+        waitTime = waitTime ? waitTime : 1000;
+        
+        setTimeout(() => {
+            this.redPin.digitalWrite(PinState.OFF);
+            this.greenPin.digitalWrite(PinState.OFF);
+            this.bluePin.digitalWrite(PinState.OFF);
+        }, waitTime);
     }
 
-    white() {
-        this.redPin.digitalWrite(PinState.ON);
-        this.greenPin.digitalWrite(PinState.ON);
-        this.bluePin.digitalWrite(PinState.ON);
+    white(waitTime: number | null | undefined) {
+        waitTime = waitTime ? waitTime : 1000;
+
+        setTimeout(() => {
+            this.redPin.digitalWrite(PinState.ON);
+            this.greenPin.digitalWrite(PinState.ON);
+            this.bluePin.digitalWrite(PinState.ON);
+        }, waitTime);
     }
 
-    red() {
-        this.redPin.digitalWrite(PinState.ON);
-        this.greenPin.digitalWrite(PinState.OFF);
-        this.bluePin.digitalWrite(PinState.OFF);
+    red(waitTime: number | null | undefined) {
+        waitTime = waitTime ? waitTime : 1000;
+
+        setTimeout(() => {
+            this.redPin.digitalWrite(PinState.ON);
+            this.greenPin.digitalWrite(PinState.OFF);
+            this.bluePin.digitalWrite(PinState.OFF);
+        }, waitTime);
     }
 
-    green() {
-        this.redPin.digitalWrite(PinState.OFF);
-        this.greenPin.digitalWrite(PinState.ON);
-        this.bluePin.digitalWrite(PinState.OFF);
+    green(waitTime: number | null | undefined) {
+        waitTime = waitTime ? waitTime : 1000;
+
+        setTimeout(() => {
+            this.redPin.digitalWrite(PinState.OFF);
+            this.greenPin.digitalWrite(PinState.ON);
+            this.bluePin.digitalWrite(PinState.OFF);
+        }, waitTime);
     }
 
-    blue() {
-        this.redPin.digitalWrite(PinState.OFF);
-        this.greenPin.digitalWrite(PinState.OFF);
-        this.bluePin.digitalWrite(PinState.ON);
+    blue(waitTime: number | null | undefined) {
+        waitTime = waitTime ? waitTime : 1000;
+
+        setTimeout(() => {
+            this.redPin.digitalWrite(PinState.OFF);
+            this.greenPin.digitalWrite(PinState.OFF);
+            this.bluePin.digitalWrite(PinState.ON);
+        }, waitTime);
     }
 }
