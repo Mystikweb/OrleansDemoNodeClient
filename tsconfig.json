@@ -2,15 +2,19 @@
     "compilerOptions": {
       "target": "es6",
 	  "module": "commonjs",
-	  "moduleResolution": "node",
+      "moduleResolution": "node",
+      "resolveJsonModule": true,
+      "esModuleInterop": true,
       "outDir": "dist",
       "sourceMap": true
     },
     "files": [
-      "./node_modules/@types/node/index.d.ts"
+      "./node_modules/@types/node/index.d.ts",
+      "./node_modules/@types/pigpio/index.d.ts"
     ],
     "include": [
-      "src/**/*.ts"
+      "src/**/*.ts",
+      "src/**/*.json"
     ],
     "exclude": [
       "node_modules"
