@@ -34,6 +34,8 @@
     "@aspnet/signalr": "^1.0.4",
     "@types/pigpio": "^0.4.2",
     "pigpio": "^1.1.4",
-    "rpi-dht-sensor": "^0.1.1"
+    "rpi-dht-sensor": "^0.1.1",
+    "websocket": "^1.0.28",
+    "xmlhttprequest": "^1.8.0"
   }
 }

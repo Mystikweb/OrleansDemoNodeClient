@@ -11,12 +11,22 @@ export class Dht11Reader {
         this.sensor = new DHT11(this.pin);
     }
 
-    readValue(): SensorResult {
-        const sensorReadValue = this.sensor.read();
-        console.log(sensorReadValue);
+    readValue(): Promise<SensorResult> {
+        return new Promise<SensorResult>((resolve, reject) => {
+            let sensorReadValue: any = null;
+            
+            setTimeout(() => {
+                sensorReadValue = this.sensor.read();
+                console.log(sensorReadValue);
 
-        return new SensorResult(sensorReadValue.temperature,
-            sensorReadValue.humidity,
-            null);
+                if (sensorReadValue.isValid && sensorReadValue.errors === 0) {
+                    resolve(new SensorResult(sensorReadValue.temperature,
+                        sensorReadValue.humidity,
+                        null));
+                } else { 
+                    reject(sensorReadValue);
+                }
+            }, 500);
+        });
     }
 }
